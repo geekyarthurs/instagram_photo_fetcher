@@ -12,9 +12,9 @@ $ sudo mv geckodriver /usr/local/bin/
 ```
 #### Installing Geckodriver in Windows
 
-- You can download the [Geckdriver](http://https://github.com/mozilla/geckodriver/releases)
-- Unzip it
-- Copy that .exe file and put your into python parent folder (e.g., C:\Python34)
+1. Download the [Geckodriver](http://https://github.com/mozilla/geckodriver/releases)
+2. Unzip it
+3. Copy that .exe file and put your into python parent folder (e.g., C:\Python34)
 
 
 **Make sure you have Python 3 and Firefox browser installed on your PC.**
