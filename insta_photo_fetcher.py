@@ -20,16 +20,17 @@ if len(sys.argv) != 2:
 
 url = "https://www.instagram.com/{}/".format(sys.argv[1])
 
-username = input("Enter your username or email or phone number: ")
-password = input("Enter Password: ")
+
 
 #Getting Page Source 
-try:
-    browser = webdriver.Firefox()
-except:
-    print("Please install Firefox to proceed.")
 
-if(input("Do you want to login [y/n] :") == "y"):
+
+
+
+if(input("Do you want to login[y/n] :") == "y"):
+    browser = webdriver.Firefox()
+    username = input("Enter your username or email or phone number: ")
+    password = input("Enter Password: ")
 
     browser.get("https://www.instagram.com/accounts/login/")
 
@@ -48,7 +49,9 @@ if(input("Do you want to login [y/n] :") == "y"):
 
     print("Logged In")
 
-
+else:
+    print("Not logging in. Private profiles may not work.")
+    browser = webdriver.Firefox()
 browser.get(url)
 sleep(1)
 SCROLL_PAUSE_TIME = 1
