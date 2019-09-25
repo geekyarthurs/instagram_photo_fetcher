@@ -24,8 +24,11 @@ Clone this repository.
 
 
 ```sh
-$ pip install -r requirements.txt
+
+
 $ git clone https://github.com/geekyarthurs/instagram_photo_fetcher.git
+$ cd instagram_photo_fetcher
+$ pip install -r requirements.txt
 ```
 ## Execution
 
