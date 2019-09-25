@@ -32,19 +32,19 @@ except:
 
 
 browser.get("https://www.instagram.com/accounts/login/")
-sleep(1)
+
 print("Entering Username..")
-usernameInput = browser.find_element_by_name("username")
+usernameInput = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.NAME,"username")))
 usernameInput.send_keys(username)
-sleep(1)
+
 print("Entering Password..")
-passwordInput = browser.find_element_by_name("password")
+passwordInput = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.NAME,"password")))
 passwordInput.send_keys(password)
-sleep(1)
+
 print("Submitting the form..")
-submitButton = browser.find_element_by_css_selector("button[type=submit]")
+submitButton = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR,"button[type=submit]")))
 submitButton.click()
-sleep(1)
+sleep(2)
 
 print("Logged In")
 
