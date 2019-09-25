@@ -22,7 +22,7 @@ try:
 except:
     print("Please install Chrome to proceed.")
 browser.get(url)
-SCROLL_PAUSE_TIME = 1
+SCROLL_PAUSE_TIME = 
 
 # Get scroll height
 last_height = browser.execute_script("return document.body.scrollHeight")
@@ -55,7 +55,7 @@ for image in images:
     fileUrl = image['src']
     imageUrls.append((username + randomString(10),fileUrl))
 
-print("Image List Ready.")
+print("Image Found: {}".format(len(imageUrls)))
 #downloading the photos. 
 for index,url in enumerate(imageUrls):
     print("Downloading : {}".format(index + 1))
