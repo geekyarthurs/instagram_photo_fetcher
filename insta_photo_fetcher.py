@@ -29,24 +29,24 @@ try:
 except:
     print("Please install Firefox to proceed.")
 
+if(input("Do you want to login [y/n] :") == "y"):
 
+    browser.get("https://www.instagram.com/accounts/login/")
 
-browser.get("https://www.instagram.com/accounts/login/")
+    print("Entering Username..")
+    usernameInput = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.NAME,"username")))
+    usernameInput.send_keys(username)
 
-print("Entering Username..")
-usernameInput = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.NAME,"username")))
-usernameInput.send_keys(username)
+    print("Entering Password..")
+    passwordInput = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.NAME,"password")))
+    passwordInput.send_keys(password)
 
-print("Entering Password..")
-passwordInput = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.NAME,"password")))
-passwordInput.send_keys(password)
+    print("Submitting the form..")
+    submitButton = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR,"button[type=submit]")))
+    submitButton.click()
+    sleep(2)
 
-print("Submitting the form..")
-submitButton = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR,"button[type=submit]")))
-submitButton.click()
-sleep(2)
-
-print("Logged In")
+    print("Logged In")
 
 
 browser.get(url)
