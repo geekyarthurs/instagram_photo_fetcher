@@ -22,7 +22,7 @@ try:
 except:
     print("Please install Chrome to proceed.")
 browser.get(url)
-SCROLL_PAUSE_TIME = 
+SCROLL_PAUSE_TIME = 1
 
 # Get scroll height
 last_height = browser.execute_script("return document.body.scrollHeight")
