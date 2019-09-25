@@ -1,10 +1,14 @@
 import bs4
 from time import sleep
-from selenium import webdriver
-import sys
+import sys, os
 import requests
 import random, string
-import os
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 
 def randomString(stringLength=10):
     letters = string.ascii_lowercase
@@ -16,12 +20,37 @@ if len(sys.argv) != 2:
 
 url = "https://www.instagram.com/{}/".format(sys.argv[1])
 
+username = input("Enter your username or email or phone number: ")
+password = input("Enter Password: ")
+
 #Getting Page Source 
 try:
     browser = webdriver.Firefox()
 except:
     print("Please install Firefox to proceed.")
+
+
+
+browser.get("https://www.instagram.com/accounts/login/")
+sleep(1)
+print("Entering Username..")
+usernameInput = browser.find_element_by_name("username")
+usernameInput.send_keys(username)
+sleep(1)
+print("Entering Password..")
+passwordInput = browser.find_element_by_name("password")
+passwordInput.send_keys(password)
+sleep(1)
+print("Submitting the form..")
+submitButton = browser.find_element_by_css_selector("button[type=submit]")
+submitButton.click()
+sleep(1)
+
+print("Logged In")
+
+
 browser.get(url)
+sleep(1)
 SCROLL_PAUSE_TIME = 1
 
 # Get scroll height
