@@ -18,9 +18,9 @@ url = "https://www.instagram.com/{}/".format(sys.argv[1])
 
 #Getting Page Source 
 try:
-    browser = webdriver.Chrome()
+    browser = webdriver.Firefox()
 except:
-    print("Please install Chrome to proceed.")
+    print("Please install Firefox to proceed.")
 browser.get(url)
 SCROLL_PAUSE_TIME = 1
 
