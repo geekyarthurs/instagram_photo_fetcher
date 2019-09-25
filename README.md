@@ -7,7 +7,7 @@
 Clone this repository.
 
 ```sh
-$ pip install selenium requests beautifulsoup4
+$ pip install -r requirements.txt
 $ git clone https://github.com/geekyarthurs/instagram_photo_fetcher.git
 ```
 ## Execution
