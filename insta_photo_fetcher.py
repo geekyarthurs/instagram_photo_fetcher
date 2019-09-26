@@ -28,10 +28,10 @@ url = "https://www.instagram.com/{}/".format(sys.argv[1])
 
 
 if(input("Do you want to login[y/n] :") == "y"):
-    browser = webdriver.Firefox()
+    
     username = input("Enter your username or email or phone number: ")
     password = input("Enter Password: ")
-
+    browser = webdriver.Firefox()
     browser.get("https://www.instagram.com/accounts/login/")
 
     print("Entering Username..")
