@@ -78,7 +78,7 @@ browser.quit()
 
 #Webscraping for images src and alt attribute.
 soup = bs4.BeautifulSoup(html, 'lxml')
-images = soup.find_all('img')
+images = soup.find_all('img',class_="FFVAD")
 username  = soup.select("h1")[0].text.strip()
 full_name = soup.select("h1")[1].text.strip()
 print("Full Name: {} \nUsername: {}".format(full_name,username) )
